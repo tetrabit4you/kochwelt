@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="script.js"></script>
+    <title>Pizzasuppe</title>
+    <link rel="stylesheet" href="./css/rezept_marvin.css">
+    <script>
+        let ingredients = ['Hackfleisch', 'Tomate(n)', 'Champignons','Sahne-Schmelzkäse','Sahne','Wasser','Brühe', 'Salz', 'Pfeffer','Knoblauch', 'Oregano','Öl'];
+        let unitOfMeasurement =['g', 'Dose(n)', 'Dose(n)', 'g', 'g', 'ml', 'Würfel', "","","","", 'TL'];
+        let amount = ['125', '0.25', '0.25', '50','50', '62.5', '0.25', 'n.B', 'n.B', 'n.B', 'n.B', '0.5' ];
+        let newAmount = [];
+
+       function render(){
+            getAmount();
+            resetIngredientsList();
+            showIngredientsList(newAmount);     
+       }
+       
+       
+        function showIngredientsList(newAmount){   
+            for( let i = 0; i < ingredients.length; i++){ 
+                
+            if(i % 2 == 0){
+                document.getElementById('ingredients--list').innerHTML += `
+                    <div class="flex bg1">
+                        <p class="p1">${newAmount[i]}</p>   
+                        <p class="p2">${unitOfMeasurement[i]}</p> 
+                        <p class="p3">${ingredients[i]}</p>   
+                        <br>
+                    </div>
+                    `; 
+
+                 }else{
+                    document.getElementById('ingredients--list').innerHTML += `
+                    <div class="flex bg2">
+                        <p class="p1">${newAmount[i]}</p>   
+                        <p class="p2">${unitOfMeasurement[i]}</p> 
+                        <p class="p3">${ingredients[i]}</p>   
+                        <br>
+                    </div>
+                    `; 
+                }         
+            }
+        }
+
+
+        function getAmount(){
+            let portion = document.getElementById('portion').value;
+            if(portion < 1){
+                alert("Bitte geben sie einen ganzzahligen Wert über 1 als Portion ein!");
+            }else{
+                for(let i = 0; i < ingredients.length; i++){
+                if(amount[i] == "n.B"){
+                    newAmount[i] = amount[i];
+                }else{
+                    newAmount[i] = amount[i] * portion;
+                }         
+            } 
+            return newAmount;  
+            }          
+        }
+
+
+        function resetIngredientsList(){
+            document.getElementById('ingredients--list').innerHTML ="";
+        }
+
+        
+   </script>
+</head>
+<body onload=" includeHTML(), render() ">
+    
+        <!--HEADER-->
+        <div w3-include-html="templates/header.html"></div>
+        <!--HEADER END-->
+    <div class="container">
+        <h1>Pizzasuppe</h1>
+        <img class="foodimage" src="./img/pizzasuppe.jpg" alt="">
+        <div class="icon--container">
+            <div class=" icons">
+                <img src="./img/icons/clock-regular.svg" alt="">
+                <p> 30 Minuten</p>
+            </div>
+            <div class=" icons">
+                <img src="./img/icons/brain-solid.svg" alt="">
+                <p>einfach</p>
+            </div>
+            <div class="icons">
+                <img src="./img/icons/calendar-alt-regular.svg" alt="">
+                <p>13.11.2021</p>
+            </div>
+            
+        </div>
+
+        <hr>
+        <div class="flex margin">
+            <p>Zutaten für</p>
+            <input type="number" id="portion" min="1" value="1">
+            <button class="btn btn-extra" onclick="render()">Portionen</button>
+        </div>
+
+        <div id="ingredients--list"></div>
+
+        <h2>Zubereitung</h2>
+        <div class="icon--container">
+            <div class=" icons icons--bottom">
+                <img src="./img/icons/clock-regular.svg" alt="">
+                <p> Vorbereitungszeit 15 Minuten</p>
+            </div>
+            <div class="icons icons--bottom">
+                <img src="./img/icons/clock-regular.svg" alt="">
+                <p> Gesamtzeit ca. 30 Minuten</p>
+            </div>
+        </div>    
+            <p>1. Das Hackfleisch in einem Topf mit heißem Öl scharf anbraten. <br>
+
+            2. Anschließend die Tomaten, Champignons, Sahne-Schmelzkäse, Sahne, Wasser und Brühe zufügen. <br>
+            
+            3. Kurz aufkochen lassen. <br>
+            
+            4. Dann mit Salz, Pfeffer und Knoblauch würzen. <br>
+            
+            5. Ca. 10 Min bei kleiner Hitze köcheln lassen. <br>
+            
+            6. Zum Schluss noch einmal nach Bedarf abschmecken und mit Oregano verfeinern.<br><br>
+            
+            Dazu passt prima Baguette oder frisches Brot. </p>
+
+            <h3>Rezept erstellt von</h3>
+            
+        <div class="flex">
+            <img class="img--personal" src="./img/marvin.png" alt="Foto vom Rezeptersteller">
+            <h4>Marvin Wiemers</h4>
+        </div>
+    
+
+    </div>
+    
+</body>
+</html>

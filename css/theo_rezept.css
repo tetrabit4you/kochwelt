@@ -1,0 +1,87 @@
+.container-rez {
+    padding: 20px 10%;
+}
+
+.container-rez img {
+    height: 20px;
+}
+
+#img-width-con {
+    width: 100%;
+    height: 140px !important;
+    object-fit: cover;
+    background-position: bottom;
+}
+
+.three-img-icon {
+    display: flex;
+}
+
+hr {
+    width: 80%;
+    box-align: center;
+}
+
+.bg1-icon {
+    padding: 4px;
+    color: black;
+    background-color: rgb(177, 184, 182);
+    margin: 20px 20px 0px 0px;
+    font-family: 'Raleway';
+    border-radius: 10px;
+}
+
+.container-ingredients {
+    display: flex;
+    padding: 0px 10%;
+    align-items: center;
+}
+
+#int-num {
+    margin-left: 20px;
+    width: 80px;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+li:nth-child(odd) {
+    border-radius: 10px;
+    background: #9999994f
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.bg1 {
+    background-color: #9999994f;
+}
+
+p {
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.koch-img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}

@@ -1,0 +1,24 @@
+img
+style.css
+index.html
+
+
+body 
+  font-family: Raleway
+
+
+
+header
+/*ich müsste noch beim hover effekt an der weight der Schrift was machen*/
+
+
+
+.link
+
+.button  #008000
+
+.image
+
+.bg-gray #efefef
+
+.footer #403b3b

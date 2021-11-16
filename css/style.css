@@ -1,0 +1,50 @@
+/*--------------------------------------
+----Allgemeiner CODE */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+.btn {
+    margin-bottom: 0px;
+    padding: 5px 20px;
+    color: white;
+    font-size: 8px;
+    background-color: #008000;
+}
+
+h4 {
+    font-size: 10px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+
+/*Allgemeiner CODE ende */
+
+
+/*----------------------------------------
+----First DIV */
+
+.content1 {
+    height: 300px;
+    display: flex;
+}
+
+.container {
+    padding: 20px 10%;
+    align-items: center;
+}
+
+.content1 img {
+    height: 200px;
+    border-radius: 12px;
+    margin-right: 40px;
+}
+
+
+/*----------------------------------------
+----First DIV ende */
